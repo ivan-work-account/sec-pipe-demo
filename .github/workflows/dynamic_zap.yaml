@@ -1,0 +1,27 @@
+name: dynamic_zap_scan
+on:
+  push:
+    branches:
+      - master
+jobs:
+  scan-local:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run app
+        working-directory: webapp
+        - uses: actions/setup-go@v3
+        with:
+          go-version: '^1.13.1' # The Go version to download (if necessary) and use.
+        run: | 
+          go build
+          go run webapp/.
+        env:
+          8080
+      - name: ZAP Scan
+        uses: zaproxy/action-baseline@v0.6.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          docker_name: 'owasp/zap2docker-stable'
+          target: 'localhost:8080'
+          cmd_options: '-a'
