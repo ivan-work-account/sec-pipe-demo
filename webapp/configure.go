@@ -4,7 +4,6 @@ import (
 	"flag"
 	"net/http"
 	"time"
-
 	"ctf.exc/handlers"
 	"ctf.exc/middlewares"
 	"github.com/gorilla/mux"
