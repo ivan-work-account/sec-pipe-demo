@@ -11,7 +11,7 @@ jobs:
     - uses: actions/setup-go@v3
       with:
         go-version: '>=1.17.0'
-    - run: go build webapp/ & go run webapp/.
+    - run: cd webapp & go build . & go run .
     - uses: zaproxy/action-baseline@v0.6.1
       with:
         docker_name: 'owasp/zap2docker-stable'
