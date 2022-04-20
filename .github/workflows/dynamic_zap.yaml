@@ -7,14 +7,17 @@ jobs:
   scan-local:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
       - uses: actions/checkout@v3
       - name: Add GO
       - uses: actions/setup-go@v3
+      
       - name: Run app
         working-directory: webapp
         run: go build & go run webapp/.
         env:
           PORT: 8080
+      
       - name: Run ZAP
       - uses: zaproxy/action-baseline@v0.6.1
         with:
