@@ -8,13 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Add GO
       - uses: actions/setup-go@v3
+      - name: Run app
         working-directory: webapp
-        with:
-          go-version: '^1.13.1' # The Go version to download (if necessary) and use.
-        run: | 
-          go build
-          go run webapp/.
+        run: go build & go run webapp/.
         env:
           PORT: 8080
       - uses: zaproxy/action-baseline@v0.6.1
