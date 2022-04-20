@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      working-directory: webapp
       - uses: actions/setup-go@v3
+      working-directory: webapp
       with:
         go-version: '^1.13.1' # The Go version to download (if necessary) and use.
       run: | 
@@ -17,7 +17,7 @@ jobs:
         go run webapp/.
       env:
         8080
-      uses: zaproxy/action-baseline@v0.6.1
+      - uses: zaproxy/action-baseline@v0.6.1
       with:
         docker_name: 'owasp/zap2docker-stable'
         target: 'localhost:8080'
