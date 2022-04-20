@@ -7,7 +7,6 @@ jobs:
   scan-local:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
       - uses: actions/checkout@v3
       - uses: actions/setup-go@v3
         with:
