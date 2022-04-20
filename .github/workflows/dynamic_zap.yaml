@@ -15,6 +15,7 @@ jobs:
         run: go build & go run webapp/.
         env:
           PORT: 8080
+      - name: Run ZAP
       - uses: zaproxy/action-baseline@v0.6.1
         with:
           docker_name: 'owasp/zap2docker-stable'
