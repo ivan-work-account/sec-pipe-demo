@@ -1,0 +1,13 @@
+name: init-check
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  static-check:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          args: "-no-fail -fmt sarif -out results.sarif ../../../../webapp"
