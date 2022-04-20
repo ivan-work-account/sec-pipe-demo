@@ -8,8 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/checkout@v3
-        working-directory: webapp
+      working-directory: webapp
       - uses: actions/setup-go@v3
       with:
         go-version: '^1.13.1' # The Go version to download (if necessary) and use.
