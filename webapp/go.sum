@@ -1,2 +1,4 @@
 github.com/gorilla/mux v1.8.0 h1:i40aqfkR1h2SlN9hojwV5ZA91wcXFOvkdNIeFDP5koI=
 github.com/gorilla/mux v1.8.0/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
+github.com/qodrorid/godaemon v0.0.0-20170331035433-aeac1c057d11 h1:NWcgiZP/jkdEXv0Dz9OuKMDsH53zrtqSAdL0Oa2eD1g=
+github.com/qodrorid/godaemon v0.0.0-20170331035433-aeac1c057d11/go.mod h1:EOT0SeEr4wGGlily8XK56DboI5VRjNCgGtczTRQLnCo=
