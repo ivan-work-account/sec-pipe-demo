@@ -46,7 +46,7 @@ func configure() *http.Server {
 
 	server := &http.Server{
 		Handler:      router,
-		Addr:         "localhost:8080",
+		Addr:         ":8080",
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
