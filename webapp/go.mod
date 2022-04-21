@@ -1,8 +1,5 @@
 module ctf.exc
 
-go 1.15
+go 1.18
 
-require (
-	github.com/gorilla/mux v1.8.0
-	gopkg.in/guregu/null.v4 v4.0.0
-)
+require github.com/gorilla/mux v1.8.0
