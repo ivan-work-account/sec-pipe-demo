@@ -18,7 +18,14 @@ jobs:
           username: ec2-user
           password: securitytest
           source: "webapp/*"
-          target: "home/ec2-user/webapp"
+          target: "webapp"
+      - name: Launch remote app
+        uses: appleboy/ssh-action@master
+        with:
+          host: ec2-3-68-33-121.eu-central-1.compute.amazonaws.com
+          username: ec2-user
+          password: securitytest
+          script: pkill -f tmux & tmux new -d 'cd webapp/ & go run .'
       - uses: zaproxy/action-baseline@v0.6.1
         with:
           docker_name: "owasp/zap2docker-stable"
