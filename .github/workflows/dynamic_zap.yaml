@@ -12,7 +12,13 @@ jobs:
         with:
           go-version: ">=1.17.0"
       - name: upload app
-        run: apt install -y sshpass & sshpass ${{secrets.SSH_PASS}} scp -r webapp ec2-user@ec2-3-68-33-121.eu-central-1.compute.amazonaws.com:/home/ec2-user
+        uses: appleboy/scp-action@master
+        with:
+          host: ec2-3-68-33-121.eu-central-1.compute.amazonaws.com
+          username: ec2-user
+          password: ${{ secrets.SSH_PASS }}
+          source: "webapp/*"
+          target: "home/ec2-user/webapp"
       - uses: zaproxy/action-baseline@v0.6.1
         with:
           docker_name: "owasp/zap2docker-stable"
